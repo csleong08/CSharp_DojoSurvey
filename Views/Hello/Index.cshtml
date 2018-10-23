@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dojo survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        @model User
+        <form asp-action='Create' asp-controller="Hello" method='post'>
+            <span style="color:red" asp-validation-for="Name"></span>
+            <p>
+            <label asp-for="Name">Your Name: </label>
+            <input type='text' asp-for='Name'>
+            </p>
+            <p>
+            <span style="color:red" asp-validation-for="Dojo"></span>
+            <label asp-for="Dojo">Dojo Location: </label>
+            <select asp-for="Dojo" id="">
+                <option value="Seattle">Seattle</option>
+                <option value="San Jose">San Jose</option>
+                <option value="San Francisco">San Francisco</option>
+            </select>
+            </p>
+            <p>
+            <span style="color:red" asp-validation-for="FavLang"></span>
+            <label asp-for="FavLang">Favorite Language: </label>
+            <select asp-for="FavLang">
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="American">American</option>
+            </select>
+            </p>
+            <p>
+            <span style="color:red" asp-validation-for="Comment"></span>
+            <p><label asp-for="Comment">Comment (optional): </label></p>
+            <textarea asp-for="Comment" cols="30" rows="5"></textarea>
+            <p><input type='submit' value='Add User'></p>
+            </p>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>
